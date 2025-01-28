@@ -78,7 +78,7 @@ class TaskCrudsService extends TaskRepository {
   }
 
   @logging()
-  async deleteById(taskId: string): Promise<IAPISuccessResponse> {
+  async deleteById(taskId: number): Promise<IAPISuccessResponse> {
     try {
       const data: any = await this.deleteOne(taskId);
 

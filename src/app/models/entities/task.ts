@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity, Column, DeleteDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { User } from './user.js';
 import { ITask } from '../../utils/index.js';
 
@@ -30,7 +30,15 @@ export class Task extends BaseEntity implements ITask {
   })
   userId!: number;
 
-  @ManyToOne(() => User, (user) => user.userTasks, { nullable: false, onDelete: 'CASCADE' })
+
+  @DeleteDateColumn({
+    name: 'deleted_at',
+    type: 'timestamp',
+    nullable: true
+  })
+  deletedAt?: Date;
+
+  @ManyToOne(() => User, (user) => user.userTasks, { nullable: false })
   @JoinColumn({ name: 'userId' })
   user!: import('./index.js').User;
 }

@@ -74,7 +74,7 @@ export class TaskController extends BaseController {
   private async _deleteById(req: ICustomRequest, res: Response) {
     const headers: ICustomHeaders = req.headers;
     try {
-      const result = await TaskCRUDService.deleteById(req.params.id);
+      const result = await TaskCRUDService.deleteById(Number(req.params.id));
       this.sendSuccessResponse(res, result, headers['language']);
     } catch (error: any) {
       this.sendErrorResponse(res, error, headers['language']);

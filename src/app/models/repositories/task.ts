@@ -85,7 +85,7 @@ export abstract class TaskRepository {
   }
 
   @logging()
-  async deleteOne(id: any) {
+  async deleteOne(id: number) {
     try {
       return await this.repo.softDelete({
         id,
