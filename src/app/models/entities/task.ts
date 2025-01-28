@@ -1,4 +1,12 @@
-import { BaseEntity, Column, DeleteDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  DeleteDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { User } from './user.js';
 import { ITask } from '../../utils/index.js';
 
@@ -30,11 +38,10 @@ export class Task extends BaseEntity implements ITask {
   })
   userId!: number;
 
-
   @DeleteDateColumn({
     name: 'deleted_at',
     type: 'timestamp',
-    nullable: true
+    nullable: true,
   })
   deletedAt?: Date;
 

@@ -11,7 +11,13 @@ import {
   MakeQueryBuilderGetOne,
 } from '../../helpers/index.js';
 
-import { IGetEntity, IGetEntityList, IGetEntityReturnObject, ICreateTask, IUpdateTask } from '../../utils/index.js';
+import {
+  IGetEntity,
+  IGetEntityList,
+  IGetEntityReturnObject,
+  ICreateTask,
+  IUpdateTask,
+} from '../../utils/index.js';
 
 export abstract class TaskRepository {
   private repo: Repository<Task>;

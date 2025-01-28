@@ -55,6 +55,7 @@ export class TaskController extends BaseController {
   }
 
   @Put(TaskRoutes.UPDATE_BY_ID)
+  @Middleware([JoiValidator(ReqValidations.TaskUpdationValidator)])
   @logging()
   private async _updateById(req: ICustomRequest, res: Response) {
     const { language: language }: ICustomHeaders = req.headers;

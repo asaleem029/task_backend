@@ -21,8 +21,13 @@ class TaskService {
   }
 
   @logging()
-  async updateTask(taskId: number, args: IUpdateTask) {
+  async updateTask(taskId: any, args: IUpdateTask) {
     try {
+      const task = await TaskCRUDService.readById(taskId);
+      if (task[task.keyName].userId !== args.userId) {
+        throw ApiError.format(TaskMessages.UNAUTHORIZED_ACCESS);
+      }
+
       const data: any = await TaskCRUDService.updateOne(
         {
           id: taskId,

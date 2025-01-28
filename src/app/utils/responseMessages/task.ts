@@ -49,3 +49,8 @@ export const TASK_NOT_FETCHED = Object.freeze({
   message: 'TASK_NOT_FETCHED',
   code: StatusCodes.BAD_REQUEST,
 });
+
+export const UNAUTHORIZED_ACCESS = Object.freeze({
+  message: 'UNAUTHORIZED_ACCESS',
+  code: StatusCodes.BAD_REQUEST,
+});
