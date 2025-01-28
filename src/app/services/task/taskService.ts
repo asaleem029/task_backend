@@ -35,7 +35,7 @@ class TaskService {
           userMessage: TaskMessages.TASK_UPDATED.message,
           code: TaskMessages.TASK_UPDATED.code,
           keyName: 'data',
-          ['data']: data.raw,
+          ['data']: data.affected,
         });
       } else {
         throw TaskMessages.UPDATING_FAILURE;
