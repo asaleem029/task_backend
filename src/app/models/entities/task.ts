@@ -1,8 +1,9 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { User } from './user.js';
+import { ITask } from '../../utils/index.js';
 
 @Entity('tasks')
-export class Task {
+export class Task extends BaseEntity implements ITask {
   @PrimaryGeneratedColumn()
   id!: number;
 

@@ -4,3 +4,4 @@ export * from './makePaginationObject.js';
 export * from './makeUsersQueryParams.js';
 export * from './createToken.js';
 export * from './validateToken.js';
+export * from './makeTaskQueryParams.js';
