@@ -1,7 +1,7 @@
 import { Repository, SelectQueryBuilder } from 'typeorm';
 import { ICreateUser, IUpdateUser } from '../../utils/dto/index.js';
 import { logging } from '../../../config/decorators/index.js';
-import { Users } from '../entities/index.js';
+import { User } from '../entities/index.js';
 import DBConn from '../../../config/typeorm.js';
 
 import {
@@ -15,9 +15,9 @@ import {
 import { IGetEntity, IGetEntityList, IGetEntityReturnObject } from '../../utils/index.js';
 
 export abstract class UserRepository {
-  private repo: Repository<Users>;
+  private repo: Repository<User>;
   constructor() {
-    this.repo = DBConn.getRepository(Users);
+    this.repo = DBConn.getRepository(User);
   }
   @logging()
   async createOne(user: ICreateUser) {
@@ -31,12 +31,12 @@ export abstract class UserRepository {
   }
 
   @logging()
-  async find(args: IGetEntityList): Promise<IGetEntityReturnObject<Users>> {
+  async find(args: IGetEntityList): Promise<IGetEntityReturnObject<User>> {
     try {
-      const queryBuilder: SelectQueryBuilder<Users> = MakeQueryBuilder(
+      const queryBuilder: SelectQueryBuilder<User> = MakeQueryBuilder(
         args,
         MakeUsersQueryParams,
-        Users,
+        User,
         args.childQuery ? args.childQuery : undefined,
       );
 
@@ -60,10 +60,10 @@ export abstract class UserRepository {
   @logging()
   async findOne(args: IGetEntity): Promise<ICreateUser> {
     try {
-      const queryBuilder: SelectQueryBuilder<Users> = MakeQueryBuilderGetOne(
+      const queryBuilder: SelectQueryBuilder<User> = MakeQueryBuilderGetOne(
         args,
         MakeUsersQueryParams,
-        Users,
+        User,
       );
       const user = await queryBuilder.getOne();
       if (!user) {

@@ -44,3 +44,23 @@ export const USER_DETAIL_FOUND = Object.freeze({
   message: 'USER_DETAIL_FOUND',
   code: StatusCodes.NOT_FOUND,
 });
+
+export const INVALID_TOKEN = Object.freeze({
+  message: 'INVALID_TOKEN',
+  code: StatusCodes.NOT_FOUND,
+});
+
+export const PASSWORD_VALIDATION_FAILED = Object.freeze({
+  message: 'PASSWORD_VALIDATION_FAILED',
+  code: StatusCodes.NOT_FOUND,
+});
+
+export const PASSWORD_CONFIRMED_FAILURE = Object.freeze({
+  message: 'PASSWORD_CONFIRMED_FAILURE',
+  code: StatusCodes.NOT_FOUND,
+});
+
+export const PASSWORD_VALID = Object.freeze({
+  message: 'PASSWORD_VALID',
+  code: StatusCodes.OK,
+});

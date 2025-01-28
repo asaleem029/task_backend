@@ -1,9 +1,10 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, OneToMany } from 'typeorm';
 import { BaseEntity } from './base.js';
 import { IUser } from '../../utils/dto/user/user.js';
+import { Task } from './task.js';
 
 @Entity('users')
-export class Users extends BaseEntity implements IUser {
+export class User extends BaseEntity implements IUser {
   @Column({
     name: 'first_name',
     type: 'varchar',
@@ -36,4 +37,7 @@ export class Users extends BaseEntity implements IUser {
     default: null,
   })
   password!: string;
+
+  @OneToMany(() => Task, (task) => task.user)
+  userTasks!: Task[];
 }
