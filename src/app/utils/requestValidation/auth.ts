@@ -25,7 +25,6 @@ const signInValidator = Joi.object().keys({
   body: Joi.object({
     email: Joi.string().email().required().label('Email is a mandatory field'),
     password: Joi.string()
-      .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
       .required()
       .label(
         'Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one digit, and one special character.',
@@ -34,7 +33,4 @@ const signInValidator = Joi.object().keys({
   query: Joi.object().empty().optional(),
 });
 
-export {
-  signUpValidator as SignUpValidator,
-  signInValidator as signInValidator,
-};
+export { signUpValidator as SignUpValidator, signInValidator as signInValidator };

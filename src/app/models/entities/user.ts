@@ -1,7 +1,6 @@
 import { Entity, Column } from 'typeorm';
 import { BaseEntity } from './base.js';
 import { IUser } from '../../utils/dto/user/user.js';
-import { IsString } from 'class-validator';
 
 @Entity('users')
 export class Users extends BaseEntity implements IUser {
