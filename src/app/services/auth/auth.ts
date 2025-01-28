@@ -55,8 +55,6 @@ class AuthService {
 
       // VALIDATING USER DETAILS
       if (user[user.keyName].length > 0) {
-        console.log(user);
-
         const hashedPassword = user[user.keyName][0].password;
         const isValidPassword = await BcryptService.comparePassword(body.password, hashedPassword);
 

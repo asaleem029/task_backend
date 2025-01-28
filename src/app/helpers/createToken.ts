@@ -1,13 +1,13 @@
 // import { SignOptions, sign } from 'jsonwebtoken';
 import jwt from 'jsonwebtoken';
-import { ApiError, ApiSuccess, JwtSettings, TOKEN_SECRET } from '../utils/index.js';
+import { ApiError, ApiSuccess, JwtSettings } from '../utils/index.js';
 import { StatusCodes } from 'http-status-codes';
 
 const CREATE_TOKEN = async (user: any, secret: any): Promise<IAPISuccessResponse> => {
   try {
     const TOKEN = jwt.sign(user, secret as string, {
       algorithm: JwtSettings.ALGORITHM as any,
-      expiresIn: JwtSettings.TOKEN_EXPIRY as string
+      expiresIn: JwtSettings.TOKEN_EXPIRY as string,
     });
 
     return ApiSuccess.format({
