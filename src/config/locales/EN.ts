@@ -1,0 +1,25 @@
+const ENGLISH_LOCALIZATION = {
+  SIGN_UP_SUCCESS: 'User created successfully, and you will receive an OTP code via email shortly',
+  SIGN_IN_SUCCESS: 'User signed in successfully',
+  OTP_VERIFIED: 'User verified successfully',
+  OTP_RESEND: 'OTP resend successfully',
+  FORGOT_PASSWORD: 'Forgot password request received successfully',
+  USER_DATA_FETCHED: 'User listing data fetched successfully',
+  SINGLE_USER_DATA_FETCHED: 'User data fetched successfully',
+  USER_NOT_FETCHED: 'No user found',
+  USER_UPDATED: 'User data updated successfully',
+  USER_DELETED: 'User data deleted successfully',
+  USER_CREATED: 'User created successfully',
+  ROLE_CREATED: 'Role created successfully',
+  ROLES_FETCHED: 'Roles listing data fetched successfully',
+  SINGLE_ROLE_FETCHED: 'Role data fetched successfully',
+  ROLE_DELETED: 'Role data deleted successfully',
+  ROLE_UPDATED: 'Role data updated successfully',
+  PERMISSION_CREATED: 'Permission created successfully',
+  PERMISSIONS_FETCHED: 'Permissions listing data fetched successfully',
+  PERMISSION_DELETED: 'Permission data deleted successfully',
+  PERMISSION_UPDATED: 'Permission data updated successfully',
+  SINGLE_PERMISSION_FETCHED: 'Permission data fetched successfully',
+};
+
+export default ENGLISH_LOCALIZATION;
